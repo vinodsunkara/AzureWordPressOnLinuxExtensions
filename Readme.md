@@ -50,7 +50,7 @@ RUN docker-php-ext-install bcmath
 * Under Application settings section, press the `+ Add new setting`
 * Add an App Setting with the Name `PHP_INI_SCAN_DIR`and set the vlue to `/usr/local/etc/php/conf.d:/home/site/ini`
 
-*Restart the Web App and check the phpinfo page. It should return a imagick module section*
+**Restart the Web App and check the phpinfo page. It should return a imagick module section**
 
 **We can enable all the below extensions in the same way**
 
