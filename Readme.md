@@ -5,7 +5,7 @@ Installing imagick, exif & bcmath extensions on Azure WordPress On Linux Web App
 
 **https://docs.microsoft.com/en-us/azure/app-service/containers/app-service-linux-intro#limitations**
 
-* We can enable the PHP extension for Windows Web Apps configure via ini settings but for the Linux Web Apps the modifications outside of the /home directory will not be persistent after a system reboot.
+* We can enable the PHP extension for Windows Web Apps configure via ini settings but for the Linux Web Apps the modifications outside of the `/home` directory will not be persistent after a system reboot.
 
 * There is a way we can do this easily by building a custom image from Azure Open Sourced docker file and add the required extensions with docker-php-ext-install.
 
@@ -24,7 +24,7 @@ RUN apk add --update --no-cache imagemagick-libs
 Install exif Extension:
 ---
 
-We can enable this extension with 'docker-php-ext-install' since it will install all the dependencies and correct the configure options automatically. 
+We can enable this extension with `docker-php-ext-install` since it will install all the dependencies and correct the configure options automatically. 
 ```
 RUN docker-php-ext-install exif
 ```
