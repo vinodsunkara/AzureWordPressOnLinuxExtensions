@@ -31,24 +31,24 @@ RUN docker-php-ext-install bcmath
 
 **Enabling the installed Extensions:**
 SSH into the container
-Go to '/home/site' directory
-Create a directory called 'ext' (i.e. mkdir ext)
-Copy all the installed extenstensions to 'ext' folder
-All the installed extensions should be in '/usr/local/lib/php/extensions/no-debug-non-zts-20........'
-For example 'cp /usr/local/lib/php/extensions/no-debug-non-zts-20173818/imagick.so /home/site/ext/imagick.so'
-Create a directory called 'ini' (i.e. mkdir ini)
-Change working directory to 'ini'
-Create a 'extensions.ini' file and add the configuration 'extension=/home/site/ext/imagick.so' to it
+Go to `/home/site` directory
+Create a directory called `ext` (i.e. mkdir ext)
+Copy all the installed extenstensions to `ext` folder
+All the installed extensions should be in `/usr/local/lib/php/extensions/no-debug-non-zts-20........`
+For example `cp /usr/local/lib/php/extensions/no-debug-non-zts-20173818/imagick.so /home/site/ext/imagick.so`
+Create a directory called `ini` (i.e. mkdir ini)
+Change working directory to `ini`
+Create a `extensions.ini` file and add the configuration `extension=/home/site/ext/imagick.so` to it
 
 **Add Application Settings to load the Extensions:**
 Go to App Service
 Select configration of the App
-Under Application settings section, press the '+ Add new setting'
-Add an App Setting with the Name 'PHP_INI_SCAN_DIR'and set the vlue to '/usr/local/etc/php/conf.d:/home/site/ini'
+Under Application settings section, press the `+ Add new setting`
+Add an App Setting with the Name `PHP_INI_SCAN_DIR`and set the vlue to `/usr/local/etc/php/conf.d:/home/site/ini`
 
 *Restart the Web App and check the phpinfo page. It should return a imagick module section*
 
-**We can enable all the below extensions with the same way**
+**We can enable all the below extensions in the same way**
 
 ```
 RUN docker-php-ext-install soap
