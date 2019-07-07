@@ -11,7 +11,8 @@ Installing imagick, exif & bcmath extensions on Azure WordPress On Linux Web App
 
 * Custom docker containers provide you more control on the docker image itself and can modify it with new modules or extensions when your app needs these changes. 
 
-* Install Imagemagick Extension:
+**Install Imagemagick Extension:**
+
 In order to install the ImageMagick extension first we need to install the ImageMagick lib modules
 
 ```
@@ -20,6 +21,7 @@ RUN apk add --update --no-cache autoconf g++ imagemagick-dev libtool make pcre-d
 RUN apk add --update --no-cache imagemagick-libs
 ```
 **Install exif Extension:**
+
 We can enable this extension with 'docker-php-ext-install' since it will install all the dependencies and correct the configure options automatically. 
 ```
 RUN docker-php-ext-install exif
@@ -30,6 +32,7 @@ RUN docker-php-ext-install bcmath
 ```
 
 **Enabling the installed Extensions:**
+
 SSH into the container
 Go to `/home/site` directory
 Create a directory called `ext` (i.e. mkdir ext)
@@ -41,6 +44,7 @@ Change working directory to `ini`
 Create a `extensions.ini` file and add the configuration `extension=/home/site/ext/imagick.so` to it
 
 **Add Application Settings to load the Extensions:**
+
 Go to App Service
 Select configration of the App
 Under Application settings section, press the `+ Add new setting`
